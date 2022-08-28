@@ -14,9 +14,6 @@ jobs:
     steps:
       - name: Checkout source Git branch
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 10
-          submodules: true
 
       - name: Make destination directory for compiled CSS
         run: mkdir -vp release

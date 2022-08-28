@@ -1,0 +1,10 @@
+
+:root {
+	--normal-font: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+	--code-font: ui-monospace, SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+	--padding: 0.5em;
+	--article-width: 960px;
+}
+
+@import 'reset';
+@import 'layout';

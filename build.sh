@@ -1,0 +1,1 @@
+sass src/:target/ --style=compressed

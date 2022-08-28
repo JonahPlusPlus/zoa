@@ -28,7 +28,7 @@ jobs:
         run: |
           git config --local user.email 'action@github.com'
           git config --local user.name 'GitHub Action'
-          git add assets/css/*
+          git add release/*
           git commit -m 'Built CSS files'
 
       - name: Push changes

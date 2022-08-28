@@ -22,7 +22,7 @@ jobs:
         uses: gha-utilities/sass-build@v0.4.9
         with:
           source: src/zoa.scss
-          destination: release/
+          destination: release/zoa.css
 
       - name: Add and Commit back to main branch
         run: |

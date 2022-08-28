@@ -85,3 +85,22 @@ z-col {
 	height: 100%;
 	padding: 0 var(--padding);
 }
+
+figure {
+    width: 100%;
+
+    img {
+        display: block;
+
+        max-width: 100%;
+        
+		margin: 0 auto;
+    }
+	
+    figcaption {
+        width: 100%;
+        padding: var(--padding) 0em;
+		
+		text-align: center;
+    }
+}

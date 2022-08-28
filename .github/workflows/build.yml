@@ -1,0 +1,42 @@
+name: Build
+on:
+  push:
+    branches-ignore:
+      - 'releases/**'
+      - 'dependabot/**'
+    paths-ignore:
+      - '**.md'
+      - '.gitignore'
+      - '.github/dependabot.yml'
+jobs:
+  build_css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Git branch
+        uses: actions/checkout@v2
+        with:
+          ref: src-pages
+          fetch-depth: 10
+          submodules: true
+
+      - name: Make destination directory for compiled CSS
+        run: mkdir -vp release
+
+      - name: Compile SCSS to CSS
+        uses: gha-utilities/sass-build@v0.4.9
+        with:
+          source: src/zoa.scss
+          destination: release/
+
+      - name: Add and Commit back to main branch
+        run: |
+          git config --local user.email 'action@github.com'
+          git config --local user.name 'GitHub Action'
+          git add assets/css/*
+          git commit -m 'Built CSS files'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main

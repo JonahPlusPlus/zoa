@@ -35,8 +35,11 @@ main {
 article {
 	@include flex-col;
 
+	flex-grow: 1;
+
 	width: 100%;
 	max-width: var(--article-width);
+	height: auto;
 	padding: 0 var(--padding);
 	margin: 0 auto;
 }
